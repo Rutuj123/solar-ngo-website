@@ -1,14 +1,135 @@
+/* 🔥 Sticky Navbar */
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
   display: flex;
   justify-content: space-between;
-  background: #2c3e50;
+  align-items: center;
+
+  padding: 15px 30px;
+  background: rgba(7, 7, 7, 7);
+  backdrop-filter: blur(10px);
+
   color: white;
-  padding: 15px;
 }
 
-ul {
+.navbar-logo {
+  background: transparent;
+  height: 60px;   /* adjust this */
+  width: 100px;    /* maintain ratio */
+ 
+}
+.logo-container {
+  height: 100%;
   display: flex;
-  list-style: none;
-  gap: 20px;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+max-height: 100%;     /* fits inside navbar */
+  height: 50px;         /* adjust as needed */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Menu */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Links */
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* ✨ Hover underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: #f1c40f;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* 🔥 Donate Button Highlight */
+.donate-btn {
+  background: #f1c40f;
+  color: black !important;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.donate-btn:hover {
+  background: #ffd700;
+  transform: scale(1.05);
+}
+
+/* Hamburger */
+.menu-icon {
+  display: none;
+  font-size: 24px;
   cursor: pointer;
 }
+
+/* ===================== */
+/* 📱 Mobile Responsive */
+/* ===================== */
+@media (max-width: 768px) {
+ 
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    padding: 20px 0;
+
+    display: none;
+    animation: slideDown 0.3s ease;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* 🎬 Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

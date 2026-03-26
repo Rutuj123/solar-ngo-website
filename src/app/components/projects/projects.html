@@ -1,1 +1,21 @@
-<p>projects works!</p>
+<div class="projects-container">
+  <h1>Our Projects</h1>
+  <p class="subtitle">Clean Water Installations in Rural Areas</p>
+
+  <div class="projects-grid">
+    
+    <!-- Project Card -->
+    <div class="project-card" *ngFor="let project of projects">
+      <img [src]="project.image" alt="project image" (click)="selectedImage = project.image">
+
+      <div class="project-info">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.location }}</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="image-preview" *ngIf="selectedImage" (click)="selectedImage = null">
+  <img [src]="selectedImage">
+</div>
+</div>

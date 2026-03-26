@@ -1,35 +1,40 @@
-.hero{
-    height:100vh;
-    background-image: url('/village_girl.png'); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
+.hero {
+  min-height: 100vh;
+  background-image: url('/village_girl.png');
+  background-size: cover;   /* changed */
+  background-position: center;
+  background-repeat: no-repeat;
+/*  background-color: black;  */  /* fills empty space */
 }
-/* Dark overlay for text readability */
+
+/* Dark overlay for readability */
 .overlay {
   height: 100%;
- 
-   /* width: 100%;
-   background: rgba(150, 103, 103, 0.5);  dark layer */
-  
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  
-  padding: 50px;
+
+  padding: 0px;
   color: white;
+
+ /* background: rgba(0, 0, 0, 0.5);   important for mobile */
 }
+
+/* Desktop styles */
 .overlay h1 {
   font-size: 48px;
   max-width: 600px;
+  line-height: 1.2;
 }
 
 .overlay p {
   font-size: 20px;
   margin: 20px 0;
 }
+
+/* Button */
 button {
   background: #f1c40f;
   border: none;
@@ -39,25 +44,75 @@ button {
   border-radius: 5px;
 }
 
-/* 
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background: rgba(0, 150, 255, 0.3);
-  border-radius: 50%;
-  animation: ripple 2s infinite;
+/* ===================== */
+/* 📱 Tablet (<=768px) */
+/* ===================== */
+@media (max-width: 768px) {
+  .hero {
+    background-size: contain;   /* show full image */
+    background-position: top;   /* focus on face */
+    
+  }
+  .overlay p {
+    font-size: 16px;
+  }
+
+  button {
+    width: 100%;             /* easy tap */
+    max-width: 250px;
+  }
+
+  .overlay {
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .overlay h1 {
+    font-size: 26px;
+    max-width: 100%;
+  }
 }
 
-@keyframes ripple {
-  0% {
-    transform: scale(0.5);
-    opacity: 1;
+/* ===================== */
+/* 📱 Small Mobile (<=480px) */
+/* ===================== */
+@media (max-width: 480px) {
+
+  .hero {
+    background-size: contain;   /* ✅ show full image */
+    background-position: top;   /* ✅ focus on face */
+    background-repeat: no-repeat;
+    background-color:rgb(44, 62, 80);  /* ✅ fill empty space */
+
+    min-height: 20vh;
+    display: flex;
+    align-items: flex-start;    /* ✅ move content to top */
   }
-  100% {
-    transform: scale(3);
-    opacity: 0;
+
+  .overlay {
+    padding: 15px;
+    text-align: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+  }
+
+  .overlay h1 {
+    font-size: 20px;
+    line-height: 1.3;
+
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    max-width: 220px;
   }
 }
- */

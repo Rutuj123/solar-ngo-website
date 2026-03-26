@@ -1,4 +1,4 @@
-<nav class="navbar">
+<!-- <nav class="navbar">
   <h2>🌞 Solar NGO</h2>
 
   <ul>
@@ -8,4 +8,27 @@
     <li routerLink="donate">Donate</li>
     <li routerLink="contact">Contact</li>
   </ul>
-</nav>
+</nav> -->
+<header class="navbar">
+   <div class="logo-container" >
+   <img src="solar-logo1.png" alt="Logo" class="navbar-logo" > 
+    
+  </div>
+
+  <!-- Hamburger -->
+  <div class="menu-icon" (click)="toggleMenu()">
+    ☰
+  </div>
+
+  <!-- Menu -->
+  <nav class="nav-links" [class.active]="isMenuOpen">
+    <a routerLink="/" (click)="closeMenu()">{{'Home' | translate}}</a>
+    <a routerLink="/about" (click)="closeMenu()">About</a>
+    <a routerLink="/contact" (click)="closeMenu()">Contact</a>
+     <a routerLink="/project" (click)="closeMenu()">Project</a>
+    <!-- Highlight Button -->
+    <a routerLink="/donate" class="donate-btn" (click)="closeMenu()">Donate</a>
+    <!-- <button (click)="switchLang('en')">EN</button>
+<button (click)="switchLang('mr')">मराठी</button> -->
+  </nav>
+</header>
