@@ -1,34 +1,48 @@
-<!-- <nav class="navbar">
-  <h2>🌞 Solar NGO</h2>
+<!-- <header class="topbar">
+  <div class="container topbar-wrap">
+    <div class="left-info">
+      <span>📞 +91 98765 43210</span>
+      <span>✉ info@solarngo.org</span>
+    </div>
 
-  <ul>
-    <li routerLink="">Home</li>
-    <li routerLink="about">About</li>
-    <li routerLink="projects">Projects</li>
-    <li routerLink="donate">Donate</li>
-    <li routerLink="contact">Contact</li>
-  </ul>
-</nav> -->
-<header class="navbar">
-   <div class="logo-container" >
-   <img src="solar-logo1.png" alt="Logo" class="navbar-logo" > 
-    
+    <div class="right-info">
+      <span>Nagpur, Maharashtra</span>
+    </div>
   </div>
+</header> -->
 
-  <!-- Hamburger -->
-  <div class="menu-icon" (click)="toggleMenu()">
-    ☰
-  </div>
+<nav class="navbar">
+  <div class="container nav-wrap">
 
-  <!-- Menu -->
-  <nav class="nav-links" [class.active]="isMenuOpen">
+    <div class="logo-box">
+      <img src="solar-logo.jpg" alt="logo">
+      <div>
+        <h2>SHIVAM JALJIVAN FOUNDATION</h2>
+        <p>Serving Humanity</p>
+      </div>
+    </div>
+
+    <div class="hamburger" (click)="toggleMenu()">
+      ☰
+    </div>
+
+    <ul class="nav-links" [class.active]="mobileMenu">
+      <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
+      <li><a routerLink="/about" (click)="closeMenu()">About</a></li>
+      <li><a routerLink="/contact" (click)="closeMenu()">Contact</a></li>
+      <li><a routerLink="/project" (click)="closeMenu()">Project</a></li>
+      <li><button>Donate</button></li>
+    </ul>
+    <!-- <nav class="nav-links" [class.active]="isMenuOpen">
     <a routerLink="/" (click)="closeMenu()">{{'Home' | translate}}</a>
     <a routerLink="/about" (click)="closeMenu()">About</a>
     <a routerLink="/contact" (click)="closeMenu()">Contact</a>
      <a routerLink="/project" (click)="closeMenu()">Project</a>
-    <!-- Highlight Button -->
+     Highlight Button 
     <a routerLink="/donate" class="donate-btn" (click)="closeMenu()">Donate</a>
-    <!-- <button (click)="switchLang('en')">EN</button>
-<button (click)="switchLang('mr')">मराठी</button> -->
-  </nav>
-</header>
+     <button (click)="switchLang('en')">EN</button>
+<button (click)="switchLang('mr')">मराठी</button> 
+  </nav> -->
+
+  </div>
+</nav>

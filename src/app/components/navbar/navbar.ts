@@ -16,13 +16,16 @@ export class Navbar {
     this.translate.use(lang);
     localStorage.setItem('lang', lang);
   }
-isMenuOpen = false;
+  mobileMenu = false;
 
-toggleMenu() {
-  this.isMenuOpen = !this.isMenuOpen;
-}
+  toggleMenu() {
+    this.mobileMenu = !this.mobileMenu;
+  }
+
+
+
 
 closeMenu() {
-  this.isMenuOpen = false;
+  this.mobileMenu = false;
 }
 }

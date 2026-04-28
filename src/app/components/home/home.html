@@ -1,9 +1,115 @@
+<section class="hero-slider">
 
-<div class="hero">
-  <div class="overlay">
-    <h1>Providing Clean Water to Rural Villages</h1>
-    <h1>Fluoride free water..</h1>
-    <p>Help us bring safe drinking water to those in need</p>
+  <div
+    class="slider-track"
+    [style.transform]="'translateX(-' + currentSlide * 100 + '%)'"
+  >
+
+    <div class="slide" *ngFor="let slide of slides">
+
+      <img class="hero-img" [src]="slide.image" alt="slider image">
+
+      <div class="overlay"></div>
+
+      <div class="slide-content container" >
+        <span>{{slide.subtitle}}</span>
+        <h1>{{slide.title}}</h1>
+        <p>{{slide.desc}}</p>
+
+        <!-- <div class="hero-btns">
+          <button class="primary-btn">Donate Now</button>
+          <button class="outline-btn">Learn More</button>
+        </div> -->
+      </div>
+
+    </div>
 
   </div>
-</div>
+
+  <button class="nav-arrow left" (click)="prevSlide()">❮</button>
+  <button class="nav-arrow right" (click)="nextSlide()">❯</button>
+
+</section>
+
+
+<!-- <section class="featured-banner">
+  <div class="container">
+    <img src="solar-logo1.png" alt="">
+  </div>
+</section> -->
+
+
+<section class="about-section">
+  <div class="container about-grid">
+
+    <div class="about-img">
+      <img src="solarOffice.jpeg" alt="">
+    </div>
+
+    <div class="about-text">
+      <span>WHO WE ARE</span>
+      <h2>To create a future where every village has access to clean drinking water and renewable energy.</h2>
+
+      <p>
+        We provide affordable solutions for communities,
+         healthcare awareness and community upliftment.
+      </p>
+
+      <div class="points">
+        <div>✔ To spread awareness about water conservation</div>
+        <div>✔ To promote renewable energy in rural areas</div>
+        <div>✔ Health Programs</div>
+        <div>✔ Rural Development</div>
+      </div>
+
+     <!--  <button class="primary-btn">Read More</button> -->
+    </div>
+
+  </div>
+</section>
+<section class="about-section">
+  <div class="container about-grid">
+<div class="about-text">
+      <span>People who joined us</span>
+      <p>
+        We provide affordable solutions for communities,
+         healthcare awareness and community upliftment.
+      </p>
+
+      <div class="points">
+        <div>✔ Health Programs</div>
+        <div>✔ Rural Development</div>
+      </div>
+
+     <!--  <button class="primary-btn">Read More</button> -->
+    </div>
+    <div class="about-img">
+      <img src="gadakari.jpeg" alt="">
+    </div>
+
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="container about-grid">
+    <div class="about-img">
+      <img src="polyticiean.jpeg" alt="">
+    </div> 
+<div class="about-text">
+      <span>Clean Water=Healthy Life</span>
+      <p>
+        We provide affordable solutions for communities,
+         healthcare awareness and community upliftment.
+      </p>
+
+      <div class="points">
+        <div>✔ Health Programs</div>
+        <div>✔ Rural Development</div>
+      </div>
+
+     <!--  <button class="primary-btn">Read More</button> -->
+    </div>
+   
+
+  </div>
+</section>
